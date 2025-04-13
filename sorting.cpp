@@ -83,5 +83,6 @@ void DemoQuickSort() {
 
 void DemoSorting(){
     DemoBurbuja();
+    // QuickSort añadido
     DemoQuickSort();
 }
