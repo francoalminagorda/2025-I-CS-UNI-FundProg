@@ -4,9 +4,6 @@
 
 using namespace std;
 
-// typedef double T; // Estilo antiguo C, C++
-using T = string;    // Estilo C++11, C++14, C++17, C++20, C++23
-
 struct SArray{
     T     *pArray = nullptr;
     size_t nElem  = 0;
@@ -25,9 +22,9 @@ void ReadArray(T *pArray, size_t n){
 }
 
 void PrintArray(T *pArray, size_t n, ostream &os){
-    for(size_t i = 0 ; i < n ; ++i){
-        os << "v[" << i << "]: " << pArray[i] << endl;
-    }
+    for(size_t i = 0 ; i < n ; ++i)
+        os << pArray[i] << " ";
+    os << endl;
 }
 
 void DestroyArray(T *&pArray){
