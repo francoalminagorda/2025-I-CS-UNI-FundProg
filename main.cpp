@@ -3,6 +3,7 @@
 #include "array.h"
 #include "struct.h"
 #include "recursion.h"
+#include "sorting.h"
 using namespace std; // Para evitar el std::
 
 // Para compilar con C++:
@@ -18,8 +19,8 @@ int main(){
     // DemoParametros();
     // DemoArrays();
     // DemoStructs();
-    DemoRecursividad();
-    
+    // DemoRecursividad();
+    DemoSorting();
     return 0;
 }
 
