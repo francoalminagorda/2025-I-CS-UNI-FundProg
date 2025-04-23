@@ -1,13 +1,8 @@
 #include <iostream>
 #include "sorting.h"
 #include "array.h"
+#include "util.h"
 using namespace std;
-
-void intercambiar(int &a, int &b) {
-    int temp = a;
-    a = b;
-    b = temp;
-}
 
 // Bubble
 void Burbuja1(int* arr, size_t n) {

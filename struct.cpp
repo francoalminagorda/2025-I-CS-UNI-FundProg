@@ -2,7 +2,7 @@
 #include "struct.h"
 
 void PrintStudent(Student &s){
-    cout << "Nombre: " << s.m_name 
+    cout << "name: " << s.m_name 
          << ", Edad: " << s.m_age << endl;
 }
 
@@ -15,7 +15,7 @@ void PrintStudent(Student *pStudent){
 // }
 
 // void PrintStudentY(Student *pStudent){
-//     cout << "Nombre: " << pStudent->m_name 
+//     cout << "name: " << pStudent->m_name 
 //          << ", Edad: " << pStudent->m_age << endl;
 // }
 

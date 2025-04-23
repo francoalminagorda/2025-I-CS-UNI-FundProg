@@ -4,13 +4,15 @@
 #include "struct.h"
 #include "recursion.h"
 #include "sorting.h"
+#include "mystring.h"
+#include "classes.h"
 using namespace std; // Para evitar el std::
 
 // Para compilar con C++:
 // clang++ -o main main.cpp arit.cpp demos.cpp array.cpp
 //
 // Para compilar con C++17:
-// g++ -pthread -std=c++17 -o main main.cpp arit.cpp demos.cpp array.cpp struct.cpp recursion.cpp
+// g++ -pthread -std=c++17 -o main main.cpp arit.cpp demos.cpp array.cpp struct.cpp recursion.cpp mystring.cpp classes.cpp persona.cpp util.cpp
 // para correr ejecutar: ./main
 
 int main(){
@@ -20,7 +22,9 @@ int main(){
     // DemoArrays();
     // DemoStructs();
     // DemoRecursividad();
-    DemoSorting();
+    // DemoSorting();
+    // DemoStrings();
+    DemoClasses();
     return 0;
 }
 

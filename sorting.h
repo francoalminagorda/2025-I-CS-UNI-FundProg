@@ -1,7 +1,5 @@
 #ifndef __SORTING_H__
 #define __SORTING_H__
-
-void intercambiar(int &a, int &b);
 void Burbuja1(int* arr, size_t n);
 void BurbujaRecursivo(int* arr, size_t n);
 
