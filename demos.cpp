@@ -24,10 +24,10 @@ void f4(int *&px){ ++*px;  px = nullptr; }
 
 void DemoParametros(){
     cout << "DemoParametros ..." << endl;
-    int x = 10, y = 20;
+    int x = 10; //, y = 20;
     // f1 receives its 1st parameter by value
     cout << "void f1(int n)" << endl;
-    f1(x);
+    f1(x); 
     f1(8);
     f1(x+3);
     cout << "x: " << x << endl;
