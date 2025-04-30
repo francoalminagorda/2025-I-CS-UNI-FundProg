@@ -6,6 +6,7 @@
 #include "sorting.h"
 #include "mystring.h"
 #include "classes.h"
+#include "FuncPointers.h"
 using namespace std; // Para evitar el std::
 
 // Para compilar con C++:
@@ -22,9 +23,10 @@ int main(){
     // DemoArrays();
     // DemoStructs();
     // DemoRecursividad();
-    DemoSorting();
+    // DemoSorting();
     // DemoStrings();
     // DemoClasses();
+    DemoFunctionPointers();
     return 0;
 }
 
