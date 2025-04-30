@@ -22,9 +22,9 @@ int main(){
     // DemoArrays();
     // DemoStructs();
     // DemoRecursividad();
-    // DemoSorting();
+    DemoSorting();
     // DemoStrings();
-    DemoClasses();
+    // DemoClasses();
     return 0;
 }
 

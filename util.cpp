@@ -11,3 +11,9 @@ void intercambiar(char &a, char &b) {
     a = b;
     b = temp;
 }
+
+bool Mayor(int &a, int &b)
+{return a > b;  }
+
+bool Menor(int &a, int &b)
+{return a < b;  }
