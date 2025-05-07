@@ -82,8 +82,85 @@ void DemoQuickSort() {
     cout << endl;
 }
 
+// Función para mezclar dos subarreglos ordenados de arr[].
+void Merge(int* arr, int const left, int const mid, int const right, bool (*pComp)(int &, int &)) {
+    auto const subArrayOne = mid - left + 1;
+    auto const subArrayTwo = right - mid;
+
+    // Crear arrays temporales
+    auto *leftArray = new int[subArrayOne],
+         *rightArray = new int[subArrayTwo];
+
+    // Copiar datos a los arrays temporales leftArray[] y rightArray[]
+    for (auto i = 0; i < subArrayOne; i++)
+        leftArray[i] = arr[left + i];
+    for (auto j = 0; j < subArrayTwo; j++)
+        rightArray[j] = arr[mid + 1 + j];
+
+    auto indexOfSubArrayOne = 0, // Índice inicial del primer sub-array
+        indexOfSubArrayTwo = 0; // Índice inicial del segundo sub-array
+    int indexOfMergedArray = left; // Índice inicial del array mezclado
+
+    // Mezclar los arrays temporales de vuelta a arr[left..right]
+    while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo) {
+        if ( (*pComp)(rightArray[indexOfSubArrayTwo], leftArray[indexOfSubArrayOne])  ) {
+            arr[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
+            indexOfSubArrayOne++;
+        } else {
+            arr[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
+            indexOfSubArrayTwo++;
+        }
+        indexOfMergedArray++;
+    }
+    // Copiar los elementos restantes de left[], si los hay
+    while (indexOfSubArrayOne < subArrayOne) {
+        arr[indexOfMergedArray] = leftArray[indexOfSubArrayOne];
+        indexOfSubArrayOne++;
+        indexOfMergedArray++;
+    }
+    // Copiar los elementos restantes de right[], si los hay
+    while (indexOfSubArrayTwo < subArrayTwo) {
+        arr[indexOfMergedArray] = rightArray[indexOfSubArrayTwo];
+        indexOfSubArrayTwo++;
+        indexOfMergedArray++;
+    }
+
+    delete[] leftArray;
+    delete[] rightArray;
+}
+
+// left es para el índice izquierdo y right es para el índice derecho del
+// sub-array de arr a ordenar
+void MergeSort(int* arr, int const begin, int const end, bool (*pComp)(int &, int &)) {
+    if (begin >= end)
+        return; // Return recursivamente
+
+    int mid = begin + (end - begin) / 2;
+    MergeSort(arr, begin, mid, pComp);
+    MergeSort(arr, mid + 1, end, pComp);
+    Merge(arr, begin, mid, end, pComp);
+}
+
+void DemoMergeSort(){
+    cout << "DemoMergeSort \n";
+    int arr[] = {5, 2, 8, 1, 15, 9, 4, 7, 3, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    MergeSort(arr, 0, n-1, &Mayor);
+    cout << "Array ordenado Ascendente:\n";
+    PrintArray(arr, n, cout);
+
+    MergeSort(arr, 0, n-1, &Menor);
+    cout << "Array ordenado Descendente:\n";
+    PrintArray(arr, n, cout);
+
+    cout << endl;
+}
+
 void DemoSorting(){
     DemoBurbuja();
     // QuickSort añadido
     DemoQuickSort();
+
+    DemoMergeSort();
 }

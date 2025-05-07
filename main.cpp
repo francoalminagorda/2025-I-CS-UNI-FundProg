@@ -23,10 +23,10 @@ int main(){
     // DemoArrays();
     // DemoStructs();
     // DemoRecursividad();
-    // DemoSorting();
+    DemoSorting();
     // DemoStrings();
     // DemoClasses();
-    DemoFunctionPointers();
+    // DemoFunctionPointers();
     return 0;
 }
 
