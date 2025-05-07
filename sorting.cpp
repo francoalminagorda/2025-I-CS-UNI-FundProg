@@ -1,7 +1,7 @@
 #include <iostream>
 #include "sorting.h"
 #include "array.h"
-#include "util.h"
+
 using namespace std;
 
 // Bubble
@@ -18,7 +18,7 @@ void Burbuja1(int* arr, int n) {
 }
 
 // Bubble
-void BurbujaRecursivo(int* arr, int n, bool (*pComp)(int &, int &)) {
+void BurbujaRecursivo(int* arr, int n, CompFunc pComp) {
     if (n <= 1)
         return;
     for (int j = 1; j < n; ++j)
@@ -43,7 +43,7 @@ void DemoBurbuja(){
     cout << endl;
 }
 
-int particionar(int* arr, int first, int last, bool (*pComp)(int &, int &)) {
+int particionar(int* arr, int first, int last, CompFunc pComp) {
     int pivote = arr[last];  // Pivote es el elemento de referencia
     int i = (first - 1);
 
@@ -58,7 +58,7 @@ int particionar(int* arr, int first, int last, bool (*pComp)(int &, int &)) {
 }
 
 
-void QuickSort(int* arr, int first, int last, bool (*pComp)(int &, int &)) {
+void QuickSort(int* arr, int first, int last, CompFunc pComp) {
     if (first < last) {
         int pi = particionar(arr, first, last, pComp);
         QuickSort(arr, first, pi - 1, pComp);
@@ -83,7 +83,7 @@ void DemoQuickSort() {
 }
 
 // Función para mezclar dos subarreglos ordenados de arr[].
-void Merge(int* arr, int const left, int const mid, int const right, bool (*pComp)(int &, int &)) {
+void Merge(int* arr, int const left, int const mid, const int right, CompFunc pComp) {
     auto const subArrayOne = mid - left + 1;
     auto const subArrayTwo = right - mid;
 
@@ -131,11 +131,11 @@ void Merge(int* arr, int const left, int const mid, int const right, bool (*pCom
 
 // left es para el índice izquierdo y right es para el índice derecho del
 // sub-array de arr a ordenar
-void MergeSort(int* arr, int const begin, int const end, bool (*pComp)(int &, int &)) {
+void MergeSort(int* arr, int const begin, int const end, CompFunc pComp) {
     if (begin >= end)
         return; // Return recursivamente
 
-    int mid = begin + (end - begin) / 2;
+    auto mid = begin + (end - begin) / 2;
     MergeSort(arr, begin, mid, pComp);
     MergeSort(arr, mid + 1, end, pComp);
     Merge(arr, begin, mid, end, pComp);

@@ -12,8 +12,8 @@ void intercambiar(char &a, char &b) {
     b = temp;
 }
 
-bool Mayor(int &a, int &b){return a > b;  }
-bool Menor(int &a, int &b){return a < b;  }
+bool Mayor(int const &a, int const &b){return a > b;  }
+bool Menor(int const &a, int const &b){return a < b;  }
 
 int Suma    (int a, int b){ return a+b; }
 int Resta   (int a, int b){ return a-b; }

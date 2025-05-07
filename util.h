@@ -4,8 +4,9 @@
 void intercambiar(int &a, int &b);
 void intercambiar(char &a, char &b);
 
-bool Mayor(int &a, int &b);
-bool Menor(int &a, int &b);
+using CompFunc = bool (*)(const int &, const int &);
+bool Mayor(const int &a, const int &b);
+bool Menor(const int &a, const int &b);
 
 int Suma    (int a, int b);
 int Resta   (int a, int b);
