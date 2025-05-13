@@ -3,34 +3,36 @@
 using namespace std;
 //Implementacion del constructor.
 
-Person::Person(){
-    m_name = "Noname";
-    m_age  = 0;
+Person::Person(string name, int age){
+    setName(name);
+    setAge (age);
+    cout << "*** Constructor (" << getName() <<", " << getAge() << ");" << endl;
 }
 
-Person::Person(string name, int age){
-    m_name = name;
-    m_age  = age;
+Person::Person()
+    : Person("Jose", 10)
+{
+
 }
 
 //Implementacion de metodos.
 void Person::saludar(){
-    cout << "Hola,soy "<< m_name <<"y tengo "<< age << "años. " << endl;
+    cout << "Hola,soy "<< getName() <<" y tengo "<< getAge() << " años.\n" << endl;
 }
 
-void Person::setAge(int age){
+void Person::setAge(const int age){
     if(age >= 0)
         m_age= age;
 }
 
-int Person::getAge(){
+int Person::getAge() {
     return m_age;
 }
 
-void Person::setName(string _name){
-    m_name = _name;
-}
+void Person::setName(const string name){
+    m_name = name;
+} 
 
-string  Person::getName(){
+string  Person::getName() {
     return m_name;
 }

@@ -1,7 +1,7 @@
 #ifndef __PERSONA_H__
 #define __PERSONA_H__
 
-#include <cstring>
+#include <string>
 using namespace std;
 
 class Person{
@@ -21,10 +21,10 @@ public:
     Person(string name, int edad);
 
     // Metodos.
-    void saludar();
-    void setAge(int nuevaEdad);
-    int  getAge();
-    void    setName(string _name);    
+    void    saludar();
+    void    setAge(const int age);
+    int     getAge();
+    void    setName(const string name);    
     string  getName();
 };
 

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "classes.h"
-#include "persona.h"
+#include "person.h"
 using namespace std;
 
 void DemoClasses(){
@@ -13,4 +13,16 @@ void DemoClasses(){
     persona1.setAge(25);
     cout <<"Nueva edad :" << persona1.getAge()<< endl;
     persona1.saludar();
-}
+
+    Person persona2("Wily", 19);
+    persona2.saludar();
+
+    Person persona3;
+    persona3.saludar();
+
+    Person *pPerson4 = nullptr;
+    pPerson4 = new Person("Nicole", 18);
+    pPerson4->saludar();
+    delete pPerson4;
+
+} // Aqui recien se destruyen persona1, persona2, persona3
