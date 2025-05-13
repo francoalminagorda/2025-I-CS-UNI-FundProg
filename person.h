@@ -13,12 +13,22 @@ public:
     // Constructor
     // 1. Tiene el mismo nombre que la clase (Person en este caso)
     // 2. Pueden haber varios
-    // 3. Solo se llama 1 de ellos
-    // 4. Se invoca al declarar un objeto (estatico) o al crearlo con new (dinamico)
-    // 5. No devuelve nada (ni siquiera void)
-    // 6. Desde C++11 se pueden llamar entre constructores
+    // 3. Se invoca al declarar un objeto (estatico) o al crearlo con new (dinamico)
+    // 4. No devuelve nada (ni siquiera void)
+    // 5. Desde C++11 se pueden llamar entre constructores
+    // 6. Solo se llama 1 de ellos
     Person();
     Person(string name, int edad);
+
+    // Destructor
+    // 1. Tiene el mismo nombre que la clase pero con ~
+    // 2. Pueden haber solo uno
+    // 3. Se invoca al salir de las {} donde fue creado (estaticos) o
+    //    cuando se destruye con delete
+    // 4. No devuelve nada (ni siquiera void)
+    // 5. No tiene parámetros
+    // 5. Recomendable que siempre sea virtual
+    virtual ~Person();
 
     // Metodos.
     void    saludar();

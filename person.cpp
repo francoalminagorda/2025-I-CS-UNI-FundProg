@@ -10,9 +10,13 @@ Person::Person(string name, int age){
 }
 
 Person::Person()
-    : Person("Jose", 10)
+    : Person("SinNombre", 10)
 {
 
+}
+
+Person::~Person(){
+    cout << "--- Destructor (" << getName() <<", " << getAge() << ");" << endl;
 }
 
 //Implementacion de metodos.
