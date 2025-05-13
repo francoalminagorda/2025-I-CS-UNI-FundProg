@@ -8,8 +8,8 @@ using namespace std;
 void BurbujaClasico(int* arr, int n, CompFunc pComp) {
     if (n <= 1)
         return;
-    for (int i = 0; i < n - 1; ++i) {
-        for (int j = i+1; j < n; ++j) {
+    for (auto i = 0; i < n - 1; ++i) {
+        for (auto j = i+1; j < n; ++j) {
             if ( (*pComp)(arr[i], arr[j]) ) {
                 intercambiar(arr[i], arr[j]);
             }
@@ -21,7 +21,7 @@ void BurbujaClasico(int* arr, int n, CompFunc pComp) {
 void BurbujaRecursivo(int* arr, int n, CompFunc pComp) {
     if (n <= 1)
         return;
-    for (int j = 1; j < n; ++j)
+    for (auto j = 1; j < n; ++j)
         if ( (*pComp)(arr[j], arr[0]) )
             intercambiar(arr[0], arr[j]);
     BurbujaRecursivo(arr+1, n-1, pComp);
@@ -30,7 +30,7 @@ void BurbujaRecursivo(int* arr, int n, CompFunc pComp) {
 void DemoBurbuja(){
     cout << "DemoBurbuja \n";
     int arr[] = {5, 2, 8, 1, 15, 9, 4, 7, 3, 6};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    auto n = sizeof(arr) / sizeof(arr[0]);
 
     BurbujaRecursivo(arr, n, &Mayor);
     cout << "Array ordenado Ascendente:\n";
@@ -44,10 +44,10 @@ void DemoBurbuja(){
 }
 
 int particionar(int* arr, int first, int last, CompFunc pComp) {
-    int pivote = arr[last];  // Pivote es el elemento de referencia
-    int i = (first - 1);
+    auto pivote = arr[last];  // Pivote es el elemento de referencia
+    auto i = (first - 1);
 
-    for (int j = first; j <= last - 1; j++) {
+    for (auto j = first; j <= last - 1; j++) {
         if (arr[j] == pivote) ++i;
         if ( (*pComp)(arr[j], pivote) ){
             ++i; intercambiar(arr[i], arr[j]);
@@ -69,7 +69,7 @@ void QuickSort(int* arr, int first, int last, CompFunc pComp) {
 void DemoQuickSort() {
     cout << "DemoQuickSort \n";
     int arr[] = {5, 2, 8, 15, 1, 9, 4, 7, 3, 6};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    auto n = sizeof(arr) / sizeof(arr[0]);
 
     QuickSort(arr, 0, n - 1, &Mayor);
     cout << "Arreglo ordenado Ascendente: \n";
@@ -144,7 +144,7 @@ void MergeSort(int* arr, int const begin, int const end, CompFunc pComp) {
 void DemoMergeSort(){
     cout << "DemoMergeSort \n";
     int arr[] = {5, 2, 8, 1, 15, 9, 4, 7, 3, 6};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    auto n = sizeof(arr) / sizeof(arr[0]);
 
     MergeSort(arr, 0, n-1, &Mayor);
     cout << "Array ordenado Ascendente:\n";
