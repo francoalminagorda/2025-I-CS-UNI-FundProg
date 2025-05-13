@@ -2,7 +2,7 @@
 #define __SORTING_H__
 #include "util.h"
 
-void Burbuja1(int* arr, int n);
+void BurbujaClasico(int* arr, int n, CompFunc pComp);
 void BurbujaRecursivo(int* arr, int n, CompFunc pComp);
 void DemoBurbuja();
 

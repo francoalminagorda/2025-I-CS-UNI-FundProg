@@ -4,13 +4,13 @@
 
 using namespace std;
 
-// Bubble
-void Burbuja1(int* arr, int n) {
+// Bubble  
+void BurbujaClasico(int* arr, int n, CompFunc pComp) {
     if (n <= 1)
         return;
     for (int i = 0; i < n - 1; ++i) {
         for (int j = i+1; j < n; ++j) {
-            if (arr[i] > arr[j]) {
+            if ( (*pComp)(arr[i], arr[j]) ) {
                 intercambiar(arr[i], arr[j]);
             }
         }
