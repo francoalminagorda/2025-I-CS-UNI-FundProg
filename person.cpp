@@ -3,7 +3,7 @@
 using namespace std;
 //Implementacion del constructor.
 
-Person::Person(string name, int age){
+Person::Person(NameType name, AgeType age){
     setName(name);
     setAge (age);
     cout << "*** Constructor (" << getName() <<", " << getAge() << ");" << endl;

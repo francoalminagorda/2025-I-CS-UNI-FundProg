@@ -2,13 +2,13 @@
 #define __PERSONA_H__
 
 #include <iostream>
-#include <string>
+#include "types.h"
 using namespace std;
 
 class Person{
 private:
-    string m_name;
-    int    m_age;
+    NameType m_name;
+    AgeType  m_age;
 
 public:
     // Constructor
@@ -19,7 +19,7 @@ public:
     // 5. Desde C++11 se pueden llamar entre constructores
     // 6. Solo se llama 1 de ellos
     Person();
-    Person(string name, int edad);
+    Person(NameType name, AgeType edad);
 
     // Destructor
     // 1. Tiene el mismo nombre que la clase pero con ~
@@ -38,10 +38,10 @@ public:
     // }
 
     // Funciones inline (pequeñas, sin bucles)
-    void    setAge(const int age)       {  m_age= age;      }
-    int     getAge()                    {  return m_age;    }
-    void    setName(const string name)  {  m_name = name;   }    
-    string  getName()                   {  return m_name;   }
+    void        setAge(const AgeType age)   {  m_age= age;      }
+    AgeType     getAge()                    {  return m_age;    }
+    void        setName(const NameType name){  m_name = name;   }    
+    NameType    getName()                   {  return m_name;   }
 };
 
 inline void Person::saludar(){
