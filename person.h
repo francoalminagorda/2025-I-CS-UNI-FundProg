@@ -1,6 +1,7 @@
 #ifndef __PERSONA_H__
 #define __PERSONA_H__
 
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -32,10 +33,19 @@ public:
 
     // Metodos.
     void    saludar();
-    void    setAge(const int age);
-    int     getAge();
-    void    setName(const string name);    
-    string  getName();
+    // {
+    //         cout << "Hola,soy "<< getName() <<" y tengo "<< getAge() << " años.\n" << endl;
+    // }
+
+    // Funciones inline (pequeñas, sin bucles)
+    void    setAge(const int age)       {  m_age= age;      }
+    int     getAge()                    {  return m_age;    }
+    void    setName(const string name)  {  m_name = name;   }    
+    string  getName()                   {  return m_name;   }
 };
+
+inline void Person::saludar(){
+    cout << "Hola,soy "<< getName() <<" y tengo "<< getAge() << " años.\n" << endl;
+}
 
 #endif

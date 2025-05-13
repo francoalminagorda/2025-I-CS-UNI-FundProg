@@ -25,4 +25,4 @@ void DemoClasses(){
     pPerson4->saludar();
     delete pPerson4;
 
-} // Aqui recien se destruyen persona1, persona2, persona3
+} // Aqui recien se destruyen persona1, persona2, persona3 
