@@ -5,7 +5,7 @@
 using namespace std;
 
 // Bubble  
-void BurbujaClasico(ContainerElemType* arr, int n, CompFunc pComp) {
+void BurbujaClasico(ContainerElemType* arr, ContainerRange n, CompFunc pComp) {
     if (n <= 1)
         return;
     for (auto i = 0; i < n - 1; ++i) {
@@ -18,7 +18,7 @@ void BurbujaClasico(ContainerElemType* arr, int n, CompFunc pComp) {
 }
 
 // Bubble
-void BurbujaRecursivo(int* arr, int n, CompFunc pComp) {
+void BurbujaRecursivo(ContainerElemType* arr, ContainerRange n, CompFunc pComp) {
     if (n <= 1)
         return;
     for (auto j = 1; j < n; ++j)
@@ -29,7 +29,7 @@ void BurbujaRecursivo(int* arr, int n, CompFunc pComp) {
 
 void DemoBurbuja(){
     cout << "DemoBurbuja \n";
-    int arr[] = {5, 2, 8, 1, 15, 9, 4, 7, 3, 6};
+    ContainerElemType arr[] = {5, 2, 8, 1, 15, 9, 4, 7, 3, 6};
     auto n = sizeof(arr) / sizeof(arr[0]);
 
     BurbujaRecursivo(arr, n, &Mayor);
@@ -43,7 +43,7 @@ void DemoBurbuja(){
     cout << endl;
 }
 
-int particionar(int* arr, int first, int last, CompFunc pComp) {
+ContainerRange particionar(ContainerElemType* arr, ContainerRange first, ContainerRange last, CompFunc pComp) {
     auto pivote = arr[last];  // Pivote es el elemento de referencia
     auto i = (first - 1);
 
@@ -58,9 +58,9 @@ int particionar(int* arr, int first, int last, CompFunc pComp) {
 }
 
 
-void QuickSort(int* arr, int first, int last, CompFunc pComp) {
+void QuickSort(ContainerElemType* arr, ContainerRange first, ContainerRange last, CompFunc pComp) {
     if (first < last) {
-        int pi = particionar(arr, first, last, pComp);
+        auto pi = particionar(arr, first, last, pComp);
         QuickSort(arr, first, pi - 1, pComp);
         QuickSort(arr, pi + 1, last, pComp);
     }
@@ -68,7 +68,7 @@ void QuickSort(int* arr, int first, int last, CompFunc pComp) {
 
 void DemoQuickSort() {
     cout << "DemoQuickSort \n";
-    int arr[] = {5, 2, 8, 15, 1, 9, 4, 7, 3, 6};
+    ContainerElemType arr[] = {5, 2, 8, 15, 1, 9, 4, 7, 3, 6};
     auto n = sizeof(arr) / sizeof(arr[0]);
 
     QuickSort(arr, 0, n - 1, &Mayor);
@@ -83,13 +83,16 @@ void DemoQuickSort() {
 }
 
 // Función para mezclar dos subarreglos ordenados de arr[].
-void Merge(int* arr, int const left, int const mid, const int right, CompFunc pComp) {
+void Merge(ContainerElemType* arr, const ContainerRange left, 
+                                   const ContainerRange mid, 
+                                   const ContainerRange right, 
+                                   CompFunc pComp) {
     auto const subArrayOne = mid - left + 1;
     auto const subArrayTwo = right - mid;
 
     // Crear arrays temporales
-    auto *leftArray = new int[subArrayOne],
-         *rightArray = new int[subArrayTwo];
+    auto *leftArray = new ContainerElemType[subArrayOne],
+         *rightArray = new ContainerElemType[subArrayTwo];
 
     // Copiar datos a los arrays temporales leftArray[] y rightArray[]
     for (auto i = 0; i < subArrayOne; i++)
@@ -99,7 +102,7 @@ void Merge(int* arr, int const left, int const mid, const int right, CompFunc pC
 
     auto indexOfSubArrayOne = 0, // Índice inicial del primer sub-array
         indexOfSubArrayTwo = 0; // Índice inicial del segundo sub-array
-    int indexOfMergedArray = left; // Índice inicial del array mezclado
+    ContainerRange indexOfMergedArray = left; // Índice inicial del array mezclado
 
     // Mezclar los arrays temporales de vuelta a arr[left..right]
     while (indexOfSubArrayOne < subArrayOne && indexOfSubArrayTwo < subArrayTwo) {
@@ -131,7 +134,10 @@ void Merge(int* arr, int const left, int const mid, const int right, CompFunc pC
 
 // left es para el índice izquierdo y right es para el índice derecho del
 // sub-array de arr a ordenar
-void MergeSort(int* arr, int const begin, int const end, CompFunc pComp) {
+void MergeSort( ContainerElemType* arr, 
+                ContainerRange const begin, 
+                ContainerRange const end,
+                CompFunc pComp) {
     if (begin >= end)
         return; // Return recursivamente
 
@@ -143,7 +149,7 @@ void MergeSort(int* arr, int const begin, int const end, CompFunc pComp) {
 
 void DemoMergeSort(){
     cout << "DemoMergeSort" << endl;
-    int arr[] = {5, 2, 8, 1, 15, 9, 4, 7, 3, 6};
+    ContainerElemType arr[] = {5, 2, 8, 1, 15, 9, 4, 7, 3, 6};
     auto n = sizeof(arr) / sizeof(arr[0]);
 
     MergeSort(arr, 0, n-1, &Mayor);

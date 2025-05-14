@@ -1,17 +1,20 @@
 #ifndef __SORTING_H__
 #define __SORTING_H__
 #include "util.h"
+#include "compareFunc.h"
 
-void BurbujaClasico(int* arr, int n, CompFunc pComp);
-void BurbujaRecursivo(int* arr, int n, CompFunc pComp);
+using ContainerRange = int;
+
+void BurbujaClasico(ContainerElemType* arr, ContainerRange n, CompFunc pComp);
+void BurbujaRecursivo(ContainerElemType* arr, ContainerRange n, CompFunc pComp);
 void DemoBurbuja();
 
-int  particionar(int* arr, int first, int last, CompFunc pComp);
-void QuickSort  (int* arr, int first, int last, CompFunc pComp);
+ContainerRange  particionar(ContainerElemType* arr, ContainerRange first, ContainerRange last, CompFunc pComp);
+void QuickSort  (ContainerElemType* arr, ContainerRange first, ContainerRange last, CompFunc pComp);
 void DemoQuickSort();
 
-void Merge(int* arr, int const left, int const mid, int const right, CompFunc pComp); 
-void MergeSort(int* arr, int const begin, int const end, CompFunc pComp);
+void Merge(ContainerElemType* arr, const ContainerRange left, const ContainerRange mid, const ContainerRange right, CompFunc pComp); 
+void MergeSort(ContainerElemType* arr, const ContainerRange begin, const ContainerRange end, CompFunc pComp);
 void DemoMergeSort();
 
 void DemoSorting();
