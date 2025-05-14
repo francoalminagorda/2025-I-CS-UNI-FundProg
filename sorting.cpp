@@ -5,7 +5,7 @@
 using namespace std;
 
 // Bubble  
-void BurbujaClasico(int* arr, int n, CompFunc pComp) {
+void BurbujaClasico(ContainerElemType* arr, int n, CompFunc pComp) {
     if (n <= 1)
         return;
     for (auto i = 0; i < n - 1; ++i) {
@@ -142,7 +142,7 @@ void MergeSort(int* arr, int const begin, int const end, CompFunc pComp) {
 }
 
 void DemoMergeSort(){
-    cout << "DemoMergeSort \n";
+    cout << "DemoMergeSort" << endl;
     int arr[] = {5, 2, 8, 1, 15, 9, 4, 7, 3, 6};
     auto n = sizeof(arr) / sizeof(arr[0]);
 

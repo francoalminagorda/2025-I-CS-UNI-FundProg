@@ -5,15 +5,15 @@
 using namespace std;
 
 struct SArray{
-    T     *pArray = nullptr;
+    ContainerElemType     *pArray = nullptr;
     size_t nElem  = 0;
 };
 
-void CreateArray(T *&pArray, size_t n){
-    pArray = new T [n]; // Pido memoria para n elementos de tipo T
+void CreateArray(ContainerElemType *&pArray, size_t n){
+    pArray = new ContainerElemType [n]; // Pido memoria para n elementos de tipo T
 }
 
-void ReadArray(T *pArray, size_t n){
+void ReadArray(ContainerElemType *pArray, size_t n){
     cout << "Leyendo " << n << " elementos ..." << endl;
     for(size_t i = 0 ; i < n ; ++i){
         cout << "Ingresar v[" << i << "]: ";
@@ -21,13 +21,13 @@ void ReadArray(T *pArray, size_t n){
     }
 }
 
-void PrintArray(T *pArray, size_t n, ostream &os){
+void PrintArray(ContainerElemType *pArray, size_t n, ostream &os){
     for(size_t i = 0 ; i < n ; ++i)
         os << pArray[i] << " ";
     os << endl;
 }
 
-void DestroyArray(T *&pArray){
+void DestroyArray(ContainerElemType *&pArray){
     cout << "Liberando la memoria asignada" << endl;
     delete [] pArray;    // Liberar la memoria
     pArray = nullptr;
@@ -35,9 +35,9 @@ void DestroyArray(T *&pArray){
 
 // Version programacion estructurada ... todavia reprobada
 void DemoArrays(){
-    T *pV1 = nullptr;
+    ContainerElemType *pV1 = nullptr;
     size_t nElem1 = 0;
-    T *pV2 = nullptr;
+    ContainerElemType *pV2 = nullptr;
     size_t nElem2 = 0;
 
     cout << "Ingrese tamano del array:";

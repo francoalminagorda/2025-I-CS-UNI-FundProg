@@ -25,4 +25,6 @@ void DemoClasses(){
     pPerson4->saludar();
     delete pPerson4;
 
+    // cout << persona1;
+
 } // Aqui recien se destruyen persona1, persona2, persona3 
