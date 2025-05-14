@@ -32,11 +32,6 @@ public:
     virtual ~Person();
 
     // Metodos.
-    void    saludar();
-    // {
-    //         cout << "Hola,soy "<< getName() <<" y tengo "<< getAge() << " años.\n" << endl;
-    // }
-
     // Funciones inline (pequeñas, sin bucles)
     void        setAge(const AgeType age)   {  m_age= age;      }
     AgeType     getAge()                    {  return m_age;    }
@@ -46,8 +41,8 @@ public:
     void operator+=(int n);
 };
 
-inline void    Person::saludar(){
-    cout << "Hola,soy "<< getName() <<" y tengo "<< getAge() << " años.\n" << endl;
+inline void operator<<(ostream &os, Person &p){
+    os << "Hola,soy "<< p.getName() <<" y tengo "<< p.getAge() << " años (<<)" << endl;
 }
 
 #endif

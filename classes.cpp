@@ -8,23 +8,24 @@ void DemoClasses(){
     Person persona1; // Entregamos los datos al constructor y crea el objeto persona.
     persona1.setName("Fabricio");
     persona1.setAge(19);
-    persona1.saludar();
+    cout << persona1;
     //Pasan unos años y queremos hacer un get and setter del objeto.
     persona1.setAge(25);
     cout <<"Nueva edad :" << persona1.getAge()<< endl;
-    persona1.saludar();
+    cout << persona1;
 
     Person persona2("Wily", 19);
-    persona2.saludar();
+    cout << persona2;
     persona2 += 3;      // persona2.operator+=(3);
-    persona2.saludar();
+    cout << persona2;
+    cout << persona2; 
 
     Person persona3;
-    persona3.saludar();
+    cout << persona3;
 
     Person *pPerson4 = nullptr;
     pPerson4 = new Person("Nicole", 18);
-    pPerson4->saludar();
+    cout << *pPerson4;
     delete pPerson4;
 
     // cout << persona1;
