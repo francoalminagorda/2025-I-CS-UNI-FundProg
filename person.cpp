@@ -18,5 +18,8 @@ Person::Person()
 Person::~Person(){
     cout << "--- Destructor (" << getName() <<", " << getAge() << ");" << endl;
 }
-
+ 
+void Person::operator+=(int n){
+    m_age += n;
+}
 

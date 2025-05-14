@@ -16,6 +16,8 @@ void DemoClasses(){
 
     Person persona2("Wily", 19);
     persona2.saludar();
+    persona2 += 3;      // persona2.operator+=(3);
+    persona2.saludar();
 
     Person persona3;
     persona3.saludar();
@@ -26,5 +28,6 @@ void DemoClasses(){
     delete pPerson4;
 
     // cout << persona1;
+
 
 } // Aqui recien se destruyen persona1, persona2, persona3 

@@ -4,7 +4,7 @@
 
 using namespace std;
 using NameType = string;
-using AgeType  = unsigned char;
+using AgeType  = unsigned int;
 
 using ContainerElemType = int;
 

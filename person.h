@@ -42,9 +42,11 @@ public:
     AgeType     getAge()                    {  return m_age;    }
     void        setName(const NameType name){  m_name = name;   }    
     NameType    getName()                   {  return m_name;   }
+
+    void operator+=(int n);
 };
 
-inline void Person::saludar(){
+inline void    Person::saludar(){
     cout << "Hola,soy "<< getName() <<" y tengo "<< getAge() << " años.\n" << endl;
 }
 
