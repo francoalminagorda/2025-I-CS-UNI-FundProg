@@ -41,8 +41,8 @@ public:
     void operator+=(int n);
 };
 
-inline void operator<<(ostream &os, Person &p){
-    os << "Hola,soy "<< p.getName() <<" y tengo "<< p.getAge() << " años (<<)" << endl;
+inline ostream &operator<<(ostream &os, Person &p){
+    return os << "Hola,soy "<< p.getName() <<" y tengo "<< p.getAge() << " años (<<)" << endl;
 }
 
 #endif

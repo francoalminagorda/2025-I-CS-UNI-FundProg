@@ -18,8 +18,11 @@ void DemoClasses(){
     cout << persona2;
     persona2 += 3;      // persona2.operator+=(3);
     cout << persona2;
-    cout << persona2; 
-
+    int x = 5;
+    cout << "=========================" << endl;
+    cout << persona2 << x << persona1 << "4to parametro" << endl;
+    cout << "=========================" << endl;
+    
     Person persona3;
     cout << persona3;
 
